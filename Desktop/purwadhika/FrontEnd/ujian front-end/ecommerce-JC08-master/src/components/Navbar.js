@@ -97,7 +97,7 @@ class HeaderKu extends Component{
                                             null
                                         }
                                         <DropdownItem>
-                                            Histori Transaksi
+                                            <Link to='/histori-transaksi'>Histori Transaksi</Link>
                                         </DropdownItem>
                                         <DropdownItem>
                                             Edit Profile

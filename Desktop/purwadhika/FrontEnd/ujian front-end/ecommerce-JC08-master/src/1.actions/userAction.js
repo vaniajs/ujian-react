@@ -188,6 +188,45 @@ export const AddToCart=(idProduk,idUser,nama,harga,img)=>{
     }
 }
 
+export const AddToCart2=(idProduk,idUser,nama,harga,img,qtyNew)=>{
+    return(dispatch)=>{
+        axios.get(urlApi+'/cart?idUser='+idUser+'&idProduk='+idProduk)
+        .then((res)=>{
+            if(res.data.length>0){
+                // var newQty = res.data[0].qty+1
+                    axios.put(urlApi+'/cart/'+res.data[0].id,{
+                        idProduk,idUser,nama,harga,img,qty:res.data[0].qty+qtyNew
+                    })
+                    .then((res)=>{
+                        console.log('INI ADD TO CART 2')
+                        // return{
+                        //     type: "UPDATE_CART",
+                        //     payload: res.data[0].qty
+                        // }
+                    })
+                    .catch((err)=>console.log(err))
+            }
+            else{
+                axios.post(urlApi+'/cart',{
+                    idProduk,idUser,nama,harga,img,qty:qtyNew
+                })
+                .then((res)=>{
+                    return{
+                        type:"ADD_CART"
+                    }
+
+                })
+                .catch((err)=>console.log(err))
+            }
+        })
+        .catch((err)=>console.log(err))
+        // ,{
+        //     idProduk,idUser,nama,harga,img,qty:
+        // }
+        
+    }
+}
+
 export const updateCart = (param) => {
     return{
         type: 'CART_QTY',

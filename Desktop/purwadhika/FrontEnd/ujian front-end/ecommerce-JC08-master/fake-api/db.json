@@ -21,6 +21,13 @@
       "email": "1",
       "phone": "1",
       "id": 4
+    },
+    {
+      "username": "hola",
+      "password": "123",
+      "email": "1",
+      "phone": "1",
+      "id": 5
     }
   ],
   "products": [
@@ -82,7 +89,7 @@
   "cart": [
     {
       "idProduk": 4,
-      "idUser": 4,
+      "idUser": 5,
       "nama": "Indonesia Merdeka",
       "harga": 40000,
       "img": "https://www.satubaju.com/img/editor/img_iscums/153/3705153_m.jpg",
@@ -90,25 +97,74 @@
       "id": 1
     },
     {
-      "idProduk": 3,
-      "idUser": 4,
-      "nama": "Epic ComeBack",
-      "harga": 30000,
-      "img": "https://ecs7.tokopedia.net/img/product-1/2018/7/27/27345219/27345219_c9909d3f-8e63-4581-a242-63995611577d_1000_1000.jpg",
+      "idProduk": 2,
+      "idUser": 5,
+      "nama": "The Dark Knight",
+      "harga": 40000,
+      "img": "https://store.primagraphia.co.id/wp-content/uploads/2014/08/konsep-kaos.jpg",
       "qty": 1,
+      "id": 2
+    }
+  ],
+  "histori": [
+    {
+      "idUser": 4,
+      "tanggal": "19-Maret-19",
+      "item": [
+        {
+          "idProduk": 2,
+          "idUser": 4,
+          "nama": "The Dark Knight",
+          "harga": 40000,
+          "img": "https://store.primagraphia.co.id/wp-content/uploads/2014/08/konsep-kaos.jpg",
+          "qty": 3,
+          "id": 2
+        },
+        {
+          "idProduk": 5,
+          "idUser": 4,
+          "nama": "Welcome",
+          "harga": 25000,
+          "img": "http://sokwear.com/82-large_default/welcome-to-state-of-kaos.jpg",
+          "qty": 1,
+          "id": 3
+        },
+        {
+          "idProduk": 4,
+          "idUser": 4,
+          "nama": "Indonesia Merdeka",
+          "harga": 40000,
+          "img": "https://www.satubaju.com/img/editor/img_iscums/153/3705153_m.jpg",
+          "qty": 2,
+          "id": 4
+        }
+      ],
       "id": 2
     },
     {
-      "idProduk": 1,
-      "idUser": 4,
-      "nama": "Kaos Polos Hitam",
-      "harga": 20000,
-      "img": "https://www.jakartanotebook.com/images/products/99/63/19075/2/kaos-polos-katun-pria-o-neck-size-m-81402b-or-t-shirt-black-24.jpg",
-      "qty": 1,
+      "idUser": 5,
+      "tanggal": "19-Maret-19",
+      "item": [
+        {
+          "idProduk": 4,
+          "idUser": 5,
+          "nama": "Indonesia Merdeka",
+          "harga": 40000,
+          "img": "https://www.satubaju.com/img/editor/img_iscums/153/3705153_m.jpg",
+          "qty": 1,
+          "id": 1
+        },
+        {
+          "idProduk": 2,
+          "idUser": 5,
+          "nama": "The Dark Knight",
+          "harga": 40000,
+          "img": "https://store.primagraphia.co.id/wp-content/uploads/2014/08/konsep-kaos.jpg",
+          "qty": 1,
+          "id": 2
+        }
+      ],
       "id": 3
     }
-  ],
-  "histori":[
-    
   ]
 }

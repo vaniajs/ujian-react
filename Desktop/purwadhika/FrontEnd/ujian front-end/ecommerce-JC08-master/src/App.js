@@ -40,7 +40,7 @@ class App extends Component {
       .then((res)=>{
         console.log('masuk')
         this.setState({cart:res.data})
-        this.fnQty()
+        this.props.updateCart(this.state.cart.length)
       })
       .catch((err)=>console.log(err))
     })
@@ -48,13 +48,13 @@ class App extends Component {
 
   }
 
-  fnQty = () => {
-    var total=0
-    for(var i=0;i<this.state.cart.length;i++){
-      total+= this.state.cart[i].qty
-    }
-    this.props.updateCart(total) 
-  }
+  // fnQty = () => {
+  //   var total=0
+  //   for(var i=0;i<this.state.cart.length;i++){
+  //     total+= this.state.cart[i].qty
+  //   }
+  //   this.props.updateCart(total) 
+  // }
 
   render() {
     if(this.props.cookie){

@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
 import { AddToCart } from './../1.actions/'
 import { urlApi } from './../support/urlApi'
+import swal from 'sweetalert'
 import './../support/css/product.css'
 
 class ProductList extends React.Component{
@@ -16,10 +17,20 @@ class ProductList extends React.Component{
         axios.get(urlApi + '/products')
         .then((res) => this.setState({listProduct : res.data}))
         .catch((err) => console.log(err))
+
     }
 
     btnAddToCart = (idProduk,idUser,nama,harga,img) => {
         this.props.AddToCart(idProduk,idUser,nama,harga,img)
+        swal ("ITEM HAS BEEN ADDED TO CART","Make Payment Soon","success")
+        // axios.get(urlApi+'/cart?idUser='+idUser)
+        // .then((res)=>{
+        //     var newqty = res.data.length
+        //     this.props.AddToCart(idProduk,idUser,nama,harga,img,newqty)
+        // })
+        // .catch((err)=>{console.log(err)})
+
+
     }
 
     renderProdukJsx = () => {
