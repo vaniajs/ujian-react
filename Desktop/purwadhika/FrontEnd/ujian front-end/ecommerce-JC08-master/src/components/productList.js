@@ -1,6 +1,8 @@
 import React from 'react'
 import axios from 'axios'
 import {Link} from 'react-router-dom'
+import {connect} from 'react-redux'
+import { AddToCart } from './../1.actions/'
 import { urlApi } from './../support/urlApi'
 import './../support/css/product.css'
 
@@ -15,6 +17,11 @@ class ProductList extends React.Component{
         .then((res) => this.setState({listProduct : res.data}))
         .catch((err) => console.log(err))
     }
+
+    btnAddToCart = (idProduk,idUser,nama,harga,img) => {
+        this.props.AddToCart(idProduk,idUser,nama,harga,img)
+    }
+
     renderProdukJsx = () => {
         var jsx = this.state.listProduct.map((val) => {
             return (
@@ -39,7 +46,7 @@ class ProductList extends React.Component{
                     }
 
                     <p style={{display:'inline' , marginLeft:'10px',fontWeight:'500'}}>Rp. {val.harga - (val.harga*(val.discount/100))}</p>
-                    <input type='button' className='d-block btn btn-primary' value='Add To Cart' />
+                    <input type='button' className='d-block btn btn-primary' value='Add To Cart' onClick={()=>this.btnAddToCart(val.id,this.props.id,val.nama,val.harga,val.img)} />
                     </div>
                 </div>
             )
@@ -58,7 +65,14 @@ class ProductList extends React.Component{
     }
 }
 
-export default ProductList
+const mapStateToProps = (state) => {
+    return{
+        id: state.user.id,
+
+    }
+}
+
+export default connect(mapStateToProps,{AddToCart})(ProductList)
 
 
 
