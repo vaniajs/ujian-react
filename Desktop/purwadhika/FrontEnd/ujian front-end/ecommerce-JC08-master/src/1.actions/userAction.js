@@ -159,10 +159,11 @@ export const AddToCart=(idProduk,idUser,nama,harga,img)=>{
                         idProduk,idUser,nama,harga,img,qty:res.data[0].qty+1
                     })
                     .then((res)=>{
-                        return{
-                            type: "UPDATE_CART",
-                            payload: res.data[0].qty
-                        }
+                        console.log(res)
+                        // return{
+                        //     type: "UPDATE_CART",
+                        //     payload: res.data[0].qty
+                        // }
                     })
                     .catch((err)=>console.log(err))
             }
@@ -193,4 +194,6 @@ export const updateCart = (param) => {
         payload: param
     }
 }
+
+
 

@@ -8,13 +8,14 @@ import ManageProduct from './components/admin/manageProduct'
 import PageNotFound from './components/pageNotFound'
 import ProductDetail from './components/productDetail'
 import Cart from './components/cart'
+import Histori from './components/histori'
 import ScrollToTop from './components/scrollToTop'
 import { Route ,withRouter, Switch } from 'react-router-dom' 
 import {connect} from 'react-redux'
 import {urlApi} from './support/urlApi'
 import axios from 'axios';
 import cookie from 'universal-cookie'
-import { keepLogin, cookieChecked,updateCart } from './1.actions'
+import { keepLogin, cookieChecked, updateCart } from './1.actions'
 import './App.css';
 
 // withRouter => Untuk tersambung ke Reducer dengan connect, 
@@ -68,6 +69,7 @@ class App extends Component {
                   <Route path='/product' component={Product} exact/>
                   <Route path='/manage' component={ManageProduct} exact/>
                   <Route path='/cart' component={Cart} exact/>
+                  <Route path='/histori-transaksi' component={Histori} exact/>
                   <Route path='/product-detail/:terserah' component={ProductDetail} exact/>
                   <Route path='*' component={PageNotFound} exact/>
               </Switch>
